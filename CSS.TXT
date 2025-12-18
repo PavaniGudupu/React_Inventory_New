@@ -1,0 +1,361 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-section {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: url("/src/public/images/Inventory.jpg") center / cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.945),
+    rgba(0, 0, 0, 0.87)
+  );
+  z-index: 0;
+}
+
+
+    /* rgb(0, 0, 0),
+    rgba(0, 0, 0, 0.658) */
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  padding: 40px 20px;
+}
+
+
+/* =========================
+   ICON
+========================= */
+.hero-icon {
+  color: #f5b301;
+  margin-bottom: 0px;
+}
+
+/* =========================
+   HEADING
+========================= */
+.hero-title {
+  font-size: clamp(5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+
+.hero-component-heading {
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+/* Gold subtitle */
+.hero-subtitle {
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f5b301;
+  margin-bottom: 25px;
+}
+
+/* Description */
+.hero-description {
+  font-size: 1.15rem;
+  color: #e5e5e5;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Primary gradient button */
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #f5b301, #ff9800);
+  color: #000;
+  padding: 14px 34px;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(245, 179, 1, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-primary-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(245, 179, 1, 0.6);
+}
+
+/* Outline button */
+.btn-outline-light {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  color: white;
+  padding: 14px 34px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background: white;
+  color: black;
+}
+
+
+/* =========================
+   ADD Form
+========================= */
+
+
+/* Fix font family and readability */
+/* body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+} */
+
+/* Form container inside .container */
+form {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.144);
+  padding: 50px 90px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  color: white;
+}
+
+
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-row .form-group {
+  flex: 1 1 45%; /* Two inputs per row */
+}
+
+
+/* Headings */
+.hero-component-heading {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+/* Form labels */
+form .form-label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  text-align: left;
+}
+
+/* Form inputs */
+form .form-control {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000;
+}
+
+/* Input focus */
+form .form-control:focus {
+  border-color: #f5b301;
+  outline: none;
+  box-shadow: 0 0 8px rgba(245, 179, 1, 0.6);
+}
+
+/* Button group */
+form .mb-3:last-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Submit button */
+form button[type="submit"] {
+  background: linear-gradient(135deg, #f5b301, #ff9800);
+  color: black;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Submit hover */
+form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 179, 1, 0.6);
+}
+
+/* Close button */
+form .close-button {
+  background: #444;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form .close-button:hover {
+  background: #666;
+}
+
+/* ####### TABLE  ########## */
+
+.table-container {
+  margin-top: 25px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  font-size: 0.95rem;
+}
+table thead {
+  background: linear-gradient(180deg, #1f2933, #111827);
+}
+
+table thead th {
+  padding: 14px 12px;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+table tbody tr {
+  background: rgba(255, 255, 255, 0.06);
+  transition: background 0.3s ease;
+}
+
+table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+table tbody tr:hover {
+  background: rgba(245, 179, 1, 0.15);
+}
+table td {
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  white-space: nowrap;
+}
+table td button {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  margin-right: 6px;
+}
+
+/* Edit button */
+table td .btn-primary-gradient {
+  background: #0d6efd;
+  color: white;
+  box-shadow: none;
+}
+
+table td .btn-primary-gradient:hover {
+  background: #0b5ed7;
+}
+
+/* Delete button */
+table td .delete-btn {
+  background: #dc3545;
+  color: white;
+}
+
+table td .delete-btn:hover {
+  background: #bb2d3b;
+}
+
+
+
+/* ##### SEARCH ####### */
+
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.search-bar .form-select,
+.search-bar .form-control {
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  border-radius: 6px;
+}
+
+/* Button Group (Add / Close) */
+.button-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  background: #6c757d;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+}
+
+.close-button:hover {
+  background: #5a6268;
+}

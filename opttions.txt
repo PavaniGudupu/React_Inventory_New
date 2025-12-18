@@ -1,0 +1,83 @@
+❌ ROOT CAUSE (100% the issue)
+Your <select>:
+<select
+  name="filterCategory"   ❌
+  className="form-select"
+  value={formData.category_id}
+  onChange={handleChange}
+>
+
+Your state:
+const [formData, setFormData] = useState({
+  name: "",
+  category_id: "",   ✅
+  mrp: "",
+  sp: "",
+  cp: "",
+  classification: "",
+  size: "",
+});
+
+❌ Why options don’t show
+
+React treats <select> as controlled
+
+value = formData.category_id
+
+BUT onChange updates filterCategory
+
+category_id never updates
+
+React keeps select stuck at ""
+
+Result: options appear empty / not selectable
+
+✅ FIX 1 (MANDATORY): Match name with state key
+🔥 Change this
+name="filterCategory"
+
+✅ To this
+name="category_id"
+
+✅ FIXED CATEGORY DROPDOWN (COPY–PASTE)
+<div className="col-md-6">
+  <label className="form-label">Category</label>
+  <select
+    name="category_id"
+    className="form-select"
+    value={formData.category_id}
+    onChange={handleChange}
+    required
+  >
+    <option value="">Select Category</option>
+
+    {categoryData.map((item) => (
+      <option key={item.category_id} value={item.category_id}>
+        {item.category}
+      </option>
+    ))}
+  </select>
+</div>
+
+❌ SECOND POSSIBLE ISSUE (Backend response shape)
+
+Open DevTools → Network → AddProducts → Preview
+
+If response is like this ❌
+{
+  "categories": [...]
+}
+
+
+Then your React code is wrong.
+
+✅ Correct fetch in that case:
+.then((json) => setCategoryData(json.categories));
+
+If response is like this ✅
+[
+  { "category_id": 1, "category": "Cosmetics" }
+]
+
+
+Then your current fetch is fine.
